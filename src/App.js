@@ -1,4 +1,5 @@
 import './App.css';
+
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { BASE_API_URL } from './utils/constants';
@@ -7,9 +8,17 @@ import { DATE_SEARCH } from './utils/constants';
 import { FRONT_PAGE } from './utils/constants';
 import { isCompositeComponent } from 'react-dom/test-utils';
 import Menu from './Components/Menu';
+
 import NewsItem from './Components/NewsItem';
 
 function App() {
+const [news,setNews] = useState([])
+useEffect(()=>{
+fetch("https://hn.algolia.com/api/v1/search?query=react").then(response => response.json())
+      .then(data => {
+        setNews(data.hits);
+      })
+
 
 const [ searchTerm , setSearchTerm ] = useState('cars');
 
@@ -62,9 +71,9 @@ const handleSearch = () => {
             )
           )
         }
+      </div>
+  )
 
-    </div>
-  );
 }
 
 export default App;
