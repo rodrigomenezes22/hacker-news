@@ -2,11 +2,76 @@
 
 .App {
   text-align: center;
+  background-image: url(./imgs/hacker-news-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header .container {
+  display: flex;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0px auto;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo .image {
+  background-color:#FC5500;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-family: 'Passion One' ;
+  margin: 10px;
+
+}
+
+.logo .name {
+  font-family: 'Passion One';
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+
+nav li a { 
+  color: white; 
+  padding: 1rem;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.login {
+  color: #FC5500
+}
+
+.font-white {
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
