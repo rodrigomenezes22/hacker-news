@@ -13,8 +13,6 @@ import NewsItem from './Components/NewsItem';
 
 function App() {
 
-
-
 const [ searchTerm , setSearchTerm ] = useState('cars');
 
 const [ news , setNews ] = useState([]);
@@ -37,6 +35,7 @@ useEffect(() => {
 }, []);
 
 
+
 const handleSearch = () => {
   setIsLoading(true);
 
@@ -52,16 +51,72 @@ const handleSearch = () => {
   })
 }
 
+const homeLogo = () => {
+  setSearchTerm('front_page');
+  handleSearch();
+}
+
+
+const pastNews = () => {
+  setIsLoading(true);
+
+  axios
+  .get(`http://hn.algolia.com/api/v1/search_by_date?tags=story`)
+  .then(res => {
+
+     return setNews(res.data.hits, ...news)
+     setIsLoading(false);
+  })
+  .catch((error) => {
+      console.log(error)
+  })
+}
+
+const commentsGet = () => {
+  setIsLoading(true);
+
+  axios
+  .get(`http://hn.algolia.com/api/v1/search?query=bar&tags=comment`)
+  .then(res => {
+
+     return setNews(res.data.hits, ...news)
+     setIsLoading(false);
+  })
+  .catch((error) => {
+      console.log(error)
+  })
+}
+
+const jobGet = () => {
+  setSearchTerm('job');
+  handleSearch();
+}
+
+const showGet = () => {
+  setSearchTerm('show');
+  handleSearch();
+}
+const handleSubmit = (event) => {
+  event.preventDefault();
+  setSearchTerm(event.target.search.value);
+  handleSearch();
+  event.target.search.value = '';
+
+};
+
+
+
+
 
   return (
     <div className="App">
-        <Menu />
+        <Menu homeLogo={homeLogo} pastNews={pastNews} commentsGet={commentsGet} jobGet={jobGet} showGet={showGet} />
 
-        <button onClick={handleSearch}>Handle Search Test</button>
+
         {
           news.map(article=>(
             <div>
-            <NewsItem id={article.id} title={article.title}  username={article.author} url={article.url} time={article.created_at} comments={ article.num_comments } />
+            <NewsItem id={article.points} title={article.title}  username={article.author} url={article.url} time={article.created_at_i} comments={ article.num_comments } />
             </div>
             )
           )

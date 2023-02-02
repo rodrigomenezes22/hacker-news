@@ -1,21 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function NewsItem({ id, title, username, url, time, comments }) {
-return (
-  <div bg="primary" variant="dark">
-  <div>
-    <p className='font-white'>{title}</p>
-    <div className="d-flex justify-content-end">
-    <div className="bg-light border">Id</div>
-      <div className="bg-light border ms-auto">Title</div>
-      <div className="bg-light border ms-auto">username</div>
-      <div className="bg-light border ms-auto">url</div>
-      <div className="bg-light border ms-auto">time</div>
-      <div className="bg-light border ms-auto">comments</div>
 
+const handleTime = ({time}) => {
+
+}
+
+return (
+  <div className='news'>
+
+      <div className="icon_text">
+      <span class="material-symbols-rounded">
+      arrow_circle_up
+      </span>
+        {id}
+      </div>
+      <div className="text">{title}</div>
+      <div className="icon_text">
+        <a href={url}>
+      <span class="material-symbols-rounded">
+      link
+      </span>
+      Open Url
+      </a>
+      </div>
+      <div className="icon_text">
+        <span class="material-symbols-rounded">
+        badge
+        </span>
+        {username}</div>
+      <div className="icon_text">
+      <span class="material-symbols-rounded">
+      schedule
+      </span>
+      {time}</div>
+      <div className="icon_inside">
+        <div className="chat_icon">{comments}</div>
+      </div>
     </div>
-  </div>
-</div>
+
 );
 }
 
