@@ -12,12 +12,7 @@ import Menu from './Components/Menu';
 import NewsItem from './Components/NewsItem';
 
 function App() {
-const [news,setNews] = useState([])
-useEffect(()=>{
-fetch("https://hn.algolia.com/api/v1/search?query=react").then(response => response.json())
-      .then(data => {
-        setNews(data.hits);
-      })
+
 
 
 const [ searchTerm , setSearchTerm ] = useState('cars');
