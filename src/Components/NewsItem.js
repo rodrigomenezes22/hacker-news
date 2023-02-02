@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function NewsItem() {
+function NewsItem({ id, title, username, url, time, comments }) {
   return (
     <div>
-      Item
+      <p className='font-white'>{title}</p>
     </div>
-  )
+  );
 }
 
-export default NewsItem
+export default NewsItem;
