@@ -45,7 +45,7 @@ const handleSearch = () => {
   setIsLoading(true);
 
   axios
-  .get(`http://hn.algolia.com/api/v1/search?query=${searchTerm}`)
+  .get(`https://hn.algolia.com/api/v1/search?query=${searchTerm}`)
   .then(res => {
     setIsLoading(false);
      return setNews(res.data.hits, ...news)
@@ -70,7 +70,7 @@ const pastNews = () => {
   setIsLoading(true);
 
   axios
-  .get(`http://hn.algolia.com/api/v1/search_by_date?tags=story`)
+  .get(`https://hn.algolia.com/api/v1/search_by_date?tags=story`)
   .then(res => {
     setIsLoading(false);
      return setNews(res.data.hits, ...news)
@@ -85,7 +85,7 @@ const commentsGet = () => {
   setIsLoading(true);
 
   axios
-  .get(`http://hn.algolia.com/api/v1/search?query=bar&tags=comment`)
+  .get(`https://hn.algolia.com/api/v1/search?query=bar&tags=comment`)
   .then(res => {
     setIsLoading(false);
      return setNews(res.data.hits, ...news)

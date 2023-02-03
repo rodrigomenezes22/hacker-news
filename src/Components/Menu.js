@@ -29,6 +29,10 @@ function Menu({ homeLogo, pastNews, commentsGet, jobGet, showGet, searchTerms, h
                 <div className='image'>Y</div>
                 <div className='name'>HACKER NEWS</div>
             </div>
+            <span class="material-symbols-outlined hamburger">
+              menu
+            </span>
+
             <nav>
               <ul>
                 <li><a>
