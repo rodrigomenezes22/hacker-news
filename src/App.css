@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Roboto:wght@100;300;400;700&display=swap');
 
-.App {
+body {
   text-align: center;
   background-image: url(./imgs/hacker-news-bg.jpg);
   background-size: cover;
   background-position: center;
+  background-color: black;
 }
 
 header .container {
@@ -22,7 +23,7 @@ header .container {
 
 .logo .image {
   background-color:#FC5500;
-  width: 70px;
+  width: 60px;
   height: 70px;
   display: flex;
   color: white;
@@ -30,7 +31,7 @@ header .container {
   justify-content: center;
   font-size: 40px;
   font-family: 'Passion One' ;
-  margin: 10px;
+  margin: 10px 20px 10px 0px;
 }
 
 .logo .name {
@@ -40,6 +41,53 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+input[type="text"] {
+  padding: .4rem ;
+  border: 0px;
+  cursor: pointer;
+  opacity: 0;
+  animation: showing 1s forwards;
+}
+
+@keyframes showing {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+} 
+
+button {
+  padding: .4rem 1rem .4rem 1rem;
+  background-color: #FC5500 ;
+  border: 0px;
+  color: white;
+  transition: color .7s, background-color .7s;
+  cursor: pointer;
+  animation: showing 1s forwards;
+}
+
+button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.login {
+  display: flex;
+}
+
+.search_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-clickable {
+  margin: 0px .4rem;
+  cursor: pointer;
+  transition: color .7s;
+}
+
+.icon-clickable:hover {
+  color: #FC5500;
 }
 
 nav ul {
@@ -59,7 +107,29 @@ nav li {
 nav li a { 
   color: white; 
   padding: 1rem;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
 }
+
+.hover-item {
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  left: 50%;
+  transition: all .7s;
+}
+
+.hover-item.active {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -148,6 +218,32 @@ nav li a {
 }
 
 .icon_text span { padding: .5rem}
+
+.loading_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  z-index: 99;
+}
+
+.loading_image {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_image img {
+  width: 300px;
+  height: 300px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
