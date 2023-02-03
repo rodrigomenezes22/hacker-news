@@ -162,7 +162,9 @@ nav li a {
   text-align: left;
 }
 
-
+.news div:nth-child(1) {
+  flex-grow: narrow;
+ }
 
 .news div:nth-child(2) {
   width: 50%;
@@ -189,7 +191,6 @@ nav li a {
 
 
 .news .icon_text {
-  width: 10%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -209,12 +210,16 @@ nav li a {
 }
 
 .chat_icon::after {
+  content: "";
   position: absolute;
-  background: black;
-  bottom: -15px;
-  left: 0px;
-  width: 10px;
-  height: 15px;
+  background: white;
+  bottom: -10px;
+  left: 10px;
+	width: 0;
+	height: 0;
+	border-left: 0px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #000;
 }
 
 .icon_text span { padding: .5rem}
@@ -264,6 +269,74 @@ nav li a {
 
 .App-link {
   color: #61dafb;
+}
+
+.hamburger { 
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .news {
+    background: white;
+    display: flex;
+    max-width: 1280px;
+    flex-direction: column;
+  }
+
+  .news div:nth-child(1) {
+    flex-grow: 1;
+    width: 100%;
+   }
+  
+  .news div:nth-child(2) {
+    width: 100%;
+    padding-left: 1rem;
+    font-weight: 700;
+  
+  }
+  
+  .news div:nth-child(3) {
+   flex-grow: 1;
+   width: 100%;
+  }
+  
+  .news div:nth-child(4) {
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .news div:nth-child(5) {
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .news div:nth-child(6) {
+    flex-grow: 1;
+    padding-bottom: 1rem
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 0;
+    background-color: #000;
+
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hamburger { 
+    display: flex;
+    color: white;
+    padding: 30px;
+  }
+
 }
 
 @keyframes App-logo-spin {

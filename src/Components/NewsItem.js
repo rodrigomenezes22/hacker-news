@@ -3,11 +3,8 @@ import React, { useEffect } from 'react'
 function NewsItem({ id, title, username, url, time, comments }) {
 
 const handleTime = (time) => {
-
-const moment = require("moment");
-
-return moment(time).startOf('hour').fromNow()
-
+    const moment = require("moment");
+    return moment(time).startOf('hour').fromNow()
 }
 
 return (
