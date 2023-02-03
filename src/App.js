@@ -96,6 +96,7 @@ const showGet = () => {
   setSearchTerm('show');
   handleSearch();
 }
+
 const handleSubmit = (event) => {
   event.preventDefault();
   setSearchTerm(event.target.search.value);
@@ -110,7 +111,7 @@ const handleSubmit = (event) => {
 
   return (
     <div className="App">
-        <Menu homeLogo={homeLogo} pastNews={pastNews} commentsGet={commentsGet} jobGet={jobGet} showGet={showGet} />
+        <Menu homeLogo={homeLogo} pastNews={pastNews} commentsGet={commentsGet} jobGet={jobGet} showGet={showGet} handleSubmit={handleSubmit} />
 
 
         {

@@ -24,7 +24,7 @@ function Menu({ homeLogo, pastNews, commentsGet, jobGet, showGet, searchTerms, h
                 <li><a>
 
                   { searchActive ? 
-                  <form onSubmit={(e) => handleSubmit(e)}>
+                  <form onSubmit={handleSubmit}>
                     <input type="text" name="search" />
                     <button type='submit'>Search</button>
                   </form> 
