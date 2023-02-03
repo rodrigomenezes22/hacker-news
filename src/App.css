@@ -1,12 +1,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Roboto:wght@100;300;400;700&display=swap');
 
-.App {
+body {
+  text-align: center;
+  background-image: url(./imgs/hacker-news-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+}
+
+header .container {
+  display: flex;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0px auto;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  cursor: pointer;
+}
+
+.logo .image {
+  background-color:#FC5500;
+  width: 60px;
+  height: 70px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-family: 'Passion One' ;
+  margin: 10px 20px 10px 0px;
+}
+
+.logo .name {
+  font-family: 'Passion One';
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="text"] {
+  padding: .4rem ;
+  border: 0px;
+  cursor: pointer;
+  opacity: 0;
+  animation: showing 1s forwards;
+}
+
+@keyframes showing {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+} 
+
+button {
+  padding: .4rem 1rem .4rem 1rem;
+  background-color: #FC5500 ;
+  border: 0px;
+  color: white;
+  transition: color .7s, background-color .7s;
+  cursor: pointer;
+  animation: showing 1s forwards;
+}
+
+button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.login {
+  display: flex;
+}
+
+.search_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-clickable {
+  margin: 0px .4rem;
+  cursor: pointer;
+  transition: color .7s;
+}
+
+.icon-clickable:hover {
+  color: #FC5500;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+
+nav li a { 
+  color: white; 
+  padding: 1rem;
+  text-decoration: none;
+  position: relative;
   text-align: center;
 }
+
+.hover-item {
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  left: 50%;
+  transition: all .7s;
+}
+
+.hover-item.active {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.login {
+  color: #FC5500
+}
+
+.font-white {
+  color: white;
+}
+
+.news {
+  background: white;
+  display: flex;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 1rem;
+  border-radius: 5px;
+  align-items: center;
+  justify-content:flex-start;
+  padding: .5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.news .text {
+
+  text-align: left;
+}
+
+
+
+.news div:nth-child(2) {
+  width: 50%;
+  padding-left: 1rem;
+  font-weight: 700;
+
+}
+
+.news div:nth-child(3) {
+ flex-grow: 1;
+}
+
+.news div:nth-child(4) {
+  flex-grow: 1;
+}
+
+.news div:nth-child(5) {
+  flex-grow: 1;
+}
+
+.news div:nth-child(6) {
+  flex-grow: 1;
+}
+
+
+.news .icon_text {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon_inside {
+  width: 30px;
+}
+
+.chat_icon {
+  background-color: black;
+  width: 30px;
+  color: white;
+  padding: .25rem .40rem ;
+  border-radius: 5px;
+  position: relative;
+}
+
+.chat_icon::after {
+  position: absolute;
+  background: black;
+  bottom: -15px;
+  left: 0px;
+  width: 10px;
+  height: 15px;
+}
+
+.icon_text span { padding: .5rem}
+
+.loading_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  z-index: 99;
+}
+
+.loading_image {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_image img {
+  width: 300px;
+  height: 300px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
